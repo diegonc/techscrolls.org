@@ -6,7 +6,7 @@ const Author = ({ author, isIndex }) => (
   <div className={styles['author']}>
     <Link to="/">
       <img
-        src={withPrefix(author.photo)}
+        src={/^\/\//.test(author.photo) ? author.photo : withPrefix(author.photo)}
         className={styles['author__photo']}
         width="75"
         height="75"
