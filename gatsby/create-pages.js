@@ -37,6 +37,7 @@ const createPages = async ({ graphql, actions }) => {
           node {
             frontmatter {
               template
+              title
             }
             fields {
               slug
@@ -57,10 +58,11 @@ const createPages = async ({ graphql, actions }) => {
         context: { slug: edge.node.fields.slug }
       });
     } else if (_.get(edge, 'node.frontmatter.template') === 'post') {
+      const slugText = edge.node.fields.slug || `/posts/${slug(edge.node.frontmatter.title)}`;
       createPage({
-        path: edge.node.fields.slug,
+        path: slugText,
         component: path.resolve('./src/templates/post-template.js'),
-        context: { slug: edge.node.fields.slug }
+        context: { slug: slugText }
       });
     }
   });
