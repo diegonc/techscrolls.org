@@ -27,10 +27,10 @@ module.exports = {
     photo: '//avatars0.githubusercontent.com/u/261458',
     bio: 'Software developer working on Node.js projects most of the time. Amateur recurve archer',
     contacts: {
-      email: 'mailto://dnietoc@gmail.com',
+      email: 'dnietoc@gmail.com',
       telegram: '#',
       twitter: '#',
-      github: 'https://github.com/diegonc',
+      github: 'diegonc',
       rss: '#',
       vkontakte: '#'
     }
