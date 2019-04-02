@@ -4,7 +4,7 @@ module.exports = {
   url: 'https://www.techscrolls.org',
   title: 'tech • scrolls',
   subtitle: 'Short notes about technology struggles',
-  copyright: `${new Date().getYear()} © All rights reserved.`,
+  copyright: `${new Date().getFullYear()} © All rights reserved.`,
   disqusShortname: '',
   postsPerPage: 4,
   googleAnalyticsId: 'UA-102567955-1',
