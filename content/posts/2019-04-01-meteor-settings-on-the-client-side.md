@@ -8,7 +8,8 @@ description: >-
   server bootstrap and pushed to the client.
 category: Meteor
 tags:
-  - javascript meteor
+  - javascript
+  - meteor
 ---
 The Meteor object provided by the framework has a property named `settings` which is populated from the file `settings.json`, specified on the command-line when the server is started. There are two main sub-keys:
 
