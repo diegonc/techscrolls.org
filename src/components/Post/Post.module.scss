@@ -2,16 +2,24 @@
 @import '../../assets/scss/mixins';
 
 .post {
+  @include margin-bottom(2);
+
+  &__inner {
+    padding: 25px 20px;
+  }
+
   &__footer {
-    max-width: $layout-post-width;
-    margin: 0 auto;
-    padding: 0 15px;
+    /*max-width: $layout-post-width;*/
+    /*margin: 0 auto;*/
+    /*padding: 0 15px;*/
+    @include margin(0, 0, 1);
   }
 
   &__comments {
-    max-width: $layout-post-width;
-    margin: 0 auto;
-    padding: 0 15px;
+    /*max-width: $layout-post-width;*/
+    /*margin: 0 auto;*/
+    /*padding: 0 15px;*/
+    @include margin(0, 0, 1);
   }
 
   &__home-button {
@@ -39,14 +47,22 @@
 
 }
 
+@include breakpoint-sm {
+  .post {
+    lost-column: 7/12;
+
+    &_inner {
+      padding: 30px 20px;
+    }
+  }
+}
+
 @include breakpoint-md {
   .post {
-    &__footer {
-      padding: 0;
-    }
+    lost-column: 2/3;
 
-    &__comments {
-      padding: 0;
+    &__inner {
+      padding: 40px 35px;
     }
 
     &__home-button {
