@@ -3,6 +3,8 @@
 
 .post {
   @include margin-bottom(2);
+  height: calc(100% - #{ 2 * $typographic-leading + "px"});
+  overflow: auto;
 
   &__inner {
     padding: 25px 20px;

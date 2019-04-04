@@ -3,9 +3,11 @@
  */
 html {
   font-size: $typographic-root-font-size;
+  height: 100%;
 }
 
 body {
+  height: 100%;
   margin: 0;
   font-family: $typographic-font-family;
   color: $typographic-base-font-color;
@@ -16,6 +18,14 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  #___gatsby {
+    height: 100%;
+
+    div[role="group"] {
+      height: 100%;
+    }
+  }
 }
 
 h1,
