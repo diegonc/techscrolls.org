@@ -7,8 +7,9 @@ description: >-
   Calling `wrapAsync` on a function will not propagate the value of `this` from
   the resulting function to the wrapped function. But the behaviour may be
   emulated by transforming it into an actual parameter.
-category: meteor
+category: Meteor
 tags:
+  - javascript
   - meteor
 ---
 Calling `wrapAsync` on a function will not propagate the value of `this` from the resulting function to the wrapped function. But the behaviour may be emulated by transforming it into an actual parameter.
