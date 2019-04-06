@@ -1,6 +1,6 @@
 ---
 template: post
-title: Meteor wrapAsync and `this`
+title: Meteor wrapAsync and this
 draft: false
 date: 2019-04-06T15:00:03.030Z
 description: >-
