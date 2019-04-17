@@ -8,7 +8,7 @@ description: >-
   [`gatsby-transformer-rawjson`](https://github/diegonc/gatsby-transformer-rawjson)
   plugin allows to publish the properties of a JSON node in raw form using the
   JSON GraphQL scalar type.
-category: javascript
+category: gatsby
 tags:
   - javascript
   - gatsby
