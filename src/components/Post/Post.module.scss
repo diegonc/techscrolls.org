@@ -4,6 +4,7 @@
 .post {
   @include margin-bottom(2);
   overflow: auto;
+  height: auto;
 
   &__inner {
     padding: 25px 20px;
