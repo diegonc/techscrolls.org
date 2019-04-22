@@ -3,7 +3,6 @@
 
 .page {
   @include margin-bottom(2);
-  height: calc(100% - #{ 2 * $typographic-leading + "px"});
   overflow: auto;
 
   &__inner {
@@ -31,6 +30,7 @@
 @include breakpoint-sm {
   .page {
     lost-column: 7/12;
+    height: calc(100% - #{ 2 * $typographic-leading + "px"});
 
     &__inner {
       padding: 30px 20px;
@@ -43,7 +43,7 @@
 @include breakpoint-md {
   .page {
     lost-column: 2/3;
-
+    height: calc(100% - #{ 2 * $typographic-leading + "px"});
     &__inner {
       padding: 40px 35px;
     }
