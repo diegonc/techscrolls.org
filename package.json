@@ -13,7 +13,8 @@
     "lint": "concurrently \"yarn run lint:js\" \"yarn run lint:scss\"",
     "test": "jest --config ./tests/jest-config.js",
     "test:coverage": "jest --coverage --config ./tests/jest-config.js",
-    "test:watch": "jest --watch --config ./tests/jest-config.js"
+    "test:watch": "jest --watch --config ./tests/jest-config.js",
+    "serve": "node scripts/serve"
   },
   "repository": "https://github.com/alxshelepenok/gatsby-starter-lumen",
   "author": "Alexander Shelepenok <alxshelepenok@gmail.com>",
@@ -99,6 +100,7 @@
     "eslint-plugin-jsx-a11y": "6.2.1",
     "eslint-plugin-react": "7.12.4",
     "eslint-watch": "5.0.1",
+    "express": "^4.17.0",
     "gh-pages": "2.0.1",
     "identity-obj-proxy": "3.0.0",
     "jest": "23.6.0",
