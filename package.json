@@ -76,6 +76,8 @@
     "react-disqus-comments": "^1.4.0",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",
+    "remark": "^10.0.1",
+    "remark-html": "^9.0.0",
     "slug": "^1.1.0"
   },
   "devDependencies": {
