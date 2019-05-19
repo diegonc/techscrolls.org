@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Link } from 'gatsby';
 import Author from './Author';
 import Comments from './Comments';
@@ -17,8 +17,14 @@ const Post = ({ post }) => {
   const { html } = post;
   const { tagSlugs } = post.fields;
 
+  const pageRef = useRef();
+
+  useEffect(() => {
+    pageRef.current.scrollIntoView();
+  });
+
   return (
-    <div className={styles['post']}>
+    <div ref={pageRef} className={styles['post']}>
       <div className={styles['post__inner']}>
         {/*<Link className={styles['post__home-button']} to="/">All Articles</Link>*/}
         <div className={styles['post__content']}>

@@ -1,11 +1,11 @@
 import React, { useRef, useEffect } from 'react';
 import styles from './Page.module.scss';
 
-const Page = ({ title, children }) => {
+const Page = ({ title, children, isIndex }) => {
   const pageRef = useRef();
 
   useEffect(() => {
-    pageRef.current.scrollIntoView();
+    if (!isIndex) pageRef.current.scrollIntoView();
   });
 
   return (
