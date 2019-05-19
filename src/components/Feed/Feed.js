@@ -22,7 +22,7 @@ const Feed = ({ edges }) => (
             <div dangerouslySetInnerHTML={{ __html: parseMD(edge.node.frontmatter.title) }} />
           </Link>
         </h2>
-        <p className={styles['feed__item-description']}
+        <div className={styles['feed__item-description']}
           dangerouslySetInnerHTML={{ __html: parseMD(edge.node.frontmatter.description)}} />
         <Link className={styles['feed__item-readmore']} to={edge.node.fields.slug}>Read</Link>
       </div>
