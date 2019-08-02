@@ -43,8 +43,9 @@ Once added the plugin is added to the `gatsby-config.js` file, and assuming the 
 
 Without specifying any particular language, the page will get every translation available for the property `text`.
 
----
+- - -
 
 DISCLAIMER: currently the plugin has a very narrow set of features:
-  * It will pick JSON nodes only if the are named `*Json`
-  * It will not allow to filter the properties to be exported as a scalar. All top-level properties but `id`, `parent`, `children` or `internal` are exposed.
+
+* It will pick JSON nodes only if the are named `*Json`
+* It will not allow to filter the properties to be exported as a scalar. All top-level properties are exposed except for `id`, `parent`, `children` and `internal`.
