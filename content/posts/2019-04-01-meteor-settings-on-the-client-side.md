@@ -26,7 +26,7 @@ Worth mentioning is the fact that Meteor keeps a reference to the public hashmap
 Meteor.settings.public = {SETTING_ONE: '1'}
 ```
 
-What one needs to do instead is use `Object.assing` to modify the object instance inplace.
+What one needs to do instead is use `Object.assign` to modify the object instance inplace.
 
 ```
 Object.assign(
