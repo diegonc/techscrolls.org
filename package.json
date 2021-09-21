@@ -78,7 +78,7 @@
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",
     "remark": "^10.0.1",
-    "remark-html": "^9.0.0",
+    "remark-html": "^13.0.2",
     "slug": "^1.1.0"
   },
   "devDependencies": {
