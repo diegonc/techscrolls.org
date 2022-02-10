@@ -178,11 +178,9 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-sass',
       options: {
-        sassOptions: {
-          postCssPlugins: [...postCssPlugins],
-          cssLoaderOptions: {
-            camelCase: false,
-          }
+        postCssPlugins: [...postCssPlugins],
+        cssLoaderOptions: {
+          camelCase: false,
         }
       }
     }
