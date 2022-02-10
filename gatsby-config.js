@@ -5,7 +5,7 @@ const postCssPlugins = require('./postcss-config.js');
 
 module.exports = {
   siteMetadata: {
-    url: siteConfig.url,
+    siteUrl: siteConfig.url,
     title: siteConfig.title,
     subtitle: siteConfig.subtitle,
     copyright: siteConfig.copyright,
@@ -42,7 +42,7 @@ module.exports = {
           {
             site {
               siteMetadata {
-                site_url: url
+                site_url: siteUrl
                 title
                 description: subtitle
               }
@@ -138,7 +138,7 @@ module.exports = {
           {
             site {
               siteMetadata {
-                url
+                siteUrl
               }
             }
             allSitePage(
@@ -156,9 +156,7 @@ module.exports = {
         `,
         output: '/sitemap.xml',
         serialize: ({ site, allSitePage }) => allSitePage.edges.map((edge) => ({
-          url: site.siteMetadata.url + edge.node.path,
-          changefreq: 'daily',
-          priority: 0.7
+          url: site.siteMetadata.siteUrl + edge.node.path,
         }))
       }
     },
@@ -180,9 +178,11 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-sass',
       options: {
-        postCssPlugins: [...postCssPlugins],
-        cssLoaderOptions: {
-          camelCase: false,
+        sassOptions: {
+          postCssPlugins: [...postCssPlugins],
+          cssLoaderOptions: {
+            camelCase: false,
+          }
         }
       }
     }

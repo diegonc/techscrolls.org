@@ -29,7 +29,7 @@ export const Comments = (props) => (
         site {
           siteMetadata {
             disqusShortname
-            url
+            url: siteUrl
           }
         }
       }
