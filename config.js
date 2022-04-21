@@ -7,7 +7,7 @@ module.exports = {
   copyright: `${new Date().getFullYear()} © All rights reserved.`,
   disqusShortname: '',
   postsPerPage: 4,
-  googleAnalyticsId: 'UA-102567955-1',
+  googleAnalyticsId: 'G-9JDKV4PX8B',
   menu: [
     {
       label: 'Articles',
