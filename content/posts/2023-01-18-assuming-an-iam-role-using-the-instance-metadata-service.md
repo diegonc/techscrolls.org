@@ -18,8 +18,8 @@ tags:
 F﻿or instance, lets ask for a token from the IMDSv2 that is valid for 5 minutes:
 
 ```shell
-TOKEN=$(curl -X PUT "http://169.254.169.254/latest/api/token" \
-        -H "X-aws-ec2-metadata-token-ttl-seconds: 300")
+    TOKEN=$(curl -X PUT "http://169.254.169.254/latest/api/token" \
+                 -H "X-aws-ec2-metadata-token-ttl-seconds: 300")
 ```
 
 T﻿his `PUT` call allows the caller to get the token that will be used in other endpoint calls.
