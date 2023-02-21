@@ -23,3 +23,17 @@ F﻿or instance, lets ask for a token from the IMDSv2 that is valid for 5 minute
 ```
 
 T﻿his `PUT` call allows the caller to get the token that will be used in other endpoint calls.
+
+N﻿ow, to assume the role of the EC2 instance and get temporary credentials like the secret access key and  the access key, the following call, provided with the `TOKEN` value, shall be executed:
+
+```shell
+    curl -X GET "http://169.254.169.254/latest/meta-data/iam/security-credentials/${AWS_ROLE_NAME}" \
+         -H "X-aws-ec2-metadata-token: $TOKEN"
+
+    {
+      AccessKeyId: '...',
+      SecretAccessKey: '...',
+      Token: '...'
+    }
+
+```
