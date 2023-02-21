@@ -13,7 +13,7 @@ tags:
   - EC2
   - IAM role
 ---
- The AWS CLI or SDK can use several methods to get credentials that allows the EC2 instance where it's running to use resorces, like S3 buckets. One of which is the Instance Metadata Services (IMDS). Currentl, the last version is `v2,` the main difference being that v2 requires a token to be requested before other endpoints may be called.
+The AWS CLI or SDK can use several methods to get credentials that allows the EC2 instance where it's running to use resources, like S3 buckets. One of which is the Instance Metadata Services (IMDS). Currently, the last version is `v2,` the main difference being that v2 requires a token to be requested before other endpoints may be called.
 
 F﻿or instance, lets ask for a token from the IMDSv2 that is valid for 5 minutes:
 
@@ -35,5 +35,25 @@ N﻿ow, to assume the role of the EC2 instance and get temporary credentials lik
       SecretAccessKey: '...',
       Token: '...'
     }
-
 ```
+
+O﻿ne thing to keep in mind is that these endpoints have a default hop limit of one, meaning it will only work directly from the EC2 instance and not from a docker container, for instance. When the `curl` commands are executed form the docker instance it must hop one time to the EC2 instance running the container and the another time to the IMDS server and as the hop limit is one the request will be rejected.
+
+T﻿his behaviour is particularly troublesome when our application is running in Elastic Beanstalk with the ECS multi-container docker platform. To circumvent the hop limit, a file can be placed in the `.ebextensions` folder which get executed when building the environment. Let's say it's called `.ebextensions/hop-limit.config`, the file must have the following content:
+
+```﻿shell
+    files:
+      "/tmp/set-hop-limit.sh":
+        mode: "000755"
+        content: |
+          #!/bin/bash
+          TOKEN=$(curl -s -X PUT -H 'X-aws-ec2-metadata-token-ttl-seconds:60' 'http://169.254.169.254/latest/api/token')
+          INSTANCE_ID=$(curl -s -H "X-aws-ec2-metadata-token:$TOKEN" 'http://169.254.169.254/latest/meta-data/instance-id')
+          aws ec2 modify-instance-metadata-options --region us-west-2 --instance-id "$INSTANCE_ID" --http-put-response-hop-limit 2 --http-endpoint enabled
+
+    commands:
+      0_set-hop-limit:
+        command: /bin/bash -x /tmp/set-hop-limit.sh || true
+```
+
+T﻿his script uses the aws CLI tool
