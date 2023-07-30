@@ -1,8 +1,8 @@
 ---
 template: post
 title: Assuming an IAM role using the Instance MetaData Service
-draft: true
-date: 2023-01-18T21:41:58.245Z
+draft: false
+date: 2023-07-30T17:00:58.245Z
 description: I﻿n AWS, one often needs to access certain resources, like S3 or
   SQS, from an EC2 instance. There are several methods to get the credentials to
   access those resources one of which is the Instance MetaData Service.
