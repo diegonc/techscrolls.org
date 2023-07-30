@@ -37,9 +37,9 @@ N﻿ow, to assume the role of the EC2 instance and get temporary credentials lik
     }
 ```
 
-O﻿ne thing to keep in mind is that these endpoints have a default hop limit of one, meaning it will only work directly from the EC2 instance and not from a docker container, for instance. When the `curl` commands are executed form the docker instance it must hop one time to the EC2 instance running the container and the another time to the IMDS server and as the hop limit is one the request will be rejected.
+O﻿ne thing to keep in mind is that these endpoints have a default hop limit of one, meaning it will only work directly from the EC2 instance and not from a docker container, for instance. When the `curl` commands are executed from the docker instance it must hop one time to the EC2 instance running the container and then another time to the IMDS server and, as the hop limit is one, the request will be rejected.
 
-T﻿his behaviour is particularly troublesome when our application is running in Elastic Beanstalk with the ECS multi-container docker platform. To circumvent the hop limit, a file can be placed in the `.ebextensions` folder which get executed when building the environment. Let's say it's called `.ebextensions/hop-limit.config`, the file must have the following content:
+T﻿his behaviour is particularly troublesome when our application is running in Elastic Beanstalk with the ECS multi-container docker platform. To circumvent the hop limit, a file can be placed in the `.ebextensions` folder which gets executed when building the environment. Let's say it's called `.ebextensions/hop-limit.config`, the file must have the following content:
 
 ```﻿shell
     files:
@@ -56,4 +56,6 @@ T﻿his behaviour is particularly troublesome when our application is running in
         command: /bin/bash -x /tmp/set-hop-limit.sh || true
 ```
 
-T﻿his script uses the aws CLI tool
+T﻿his script uses the aws CLI tool to modify the instance metadata options of the EC2 instance to allow a hop limit of up to two hops. It also uses the IMDSv2 server to get the instance ID before calling the aws CLI command.
+
+O﻿ne last thing to note is that the role of the EC2 instance must have the right permissions to be able to modify the instance metadata options. So, head to the IAM section of the Amazon console and modify the EBS role to add the `EC2ModifyInstanceMetadataOptions` permission.
