@@ -76,7 +76,7 @@
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
     "remark": "^10.0.0",
-    "remark-html": "^10.0.0",
+    "remark-html": "^13.0.2",
     "sass": "^1.69.5",
     "slug": "^8.2.3"
   },
