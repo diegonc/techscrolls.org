@@ -15,7 +15,7 @@ export const PureAuthor = ({ data }) => {
       <p className={styles['author__bio']}>
         {author.bio}
         <a
-          className={styles[`author__bio-${contact[0]}`]}
+          className={styles[`author__bio${capitalize(contact[0])}`]}
           href={getContactHref(contact[0], contact[1])}
           rel="noopener noreferrer"
           target="_blank"
