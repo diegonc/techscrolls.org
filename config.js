@@ -27,7 +27,7 @@ module.exports = {
     photo: '//avatars0.githubusercontent.com/u/261458',
     bio: 'Software developer working on Node.js projects most of the time. Amateur recurve archer',
     contacts: {
-      email: 'dnietoc@gmail.com',
+      email: 'info@techscrolls.org',
       telegram: '#',
       twitter: '#',
       github: 'diegonc',
