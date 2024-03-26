@@ -64,7 +64,7 @@
     "gatsby-source-filesystem": "^5.12.1",
     "gatsby-transformer-remark": "^6.12.3",
     "gatsby-transformer-sharp": "^5.12.3",
-    "katex": "^0.16.9",
+    "katex": "^0.16.10",
     "lodash": "^4.17.11",
     "moment": "^2.29.4",
     "normalize-scss": "^7.0.1",
