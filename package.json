@@ -102,7 +102,7 @@
     "stylelint": "^15.11.0",
     "stylelint-config-recommended-scss": "^13.0.0",
     "stylelint-scss": "^5.3.0",
-    "webpack": "^5.89.0"
+    "webpack": "^5.94.0"
   },
   "engines": {
     "node": ">=18.0.0"
